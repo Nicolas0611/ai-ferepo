@@ -2,6 +2,7 @@ import { PATHS } from "./paths.js";
 import Home from "../pages/Home.tsx";
 import { createBrowserRouter } from "react-router-dom";
 import { RoutesProps } from "../interfaces/RoutesInterface.ts";
+import NavigationLayout from "../Layout/NavigationLayout.tsx";
 
 let routes: RoutesProps[] = [
   {
@@ -57,4 +58,9 @@ routes = routes.map((route) => ({
   ...route,
 }));
 
-export const router = createBrowserRouter(routes);
+export const router = createBrowserRouter([
+  {
+    element: <NavigationLayout />,
+    children: routes,
+  },
+]);
