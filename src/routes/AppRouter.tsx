@@ -1,12 +1,46 @@
 import { PATHS } from "./paths.js";
-import App from "../App.tsx";
+import Home from "../pages/Home.tsx";
 import { createBrowserRouter } from "react-router-dom";
 import { RoutesProps } from "../interfaces/RoutesInterface.ts";
 
 let routes: RoutesProps[] = [
   {
     path: PATHS.HOME,
-    element: <App />,
+    element: <Home />,
+  },
+  {
+    path: PATHS.AUTH,
+    element: (
+      <div>
+        <h1>auth page</h1>
+      </div>
+    ),
+  },
+  {
+    path: PATHS.BLOG,
+    element: (
+      <div>
+        <h1>blog</h1>
+      </div>
+    ),
+    isPrivate: true,
+  },
+  {
+    path: PATHS.ABOUT,
+    element: (
+      <div>
+        <h1>about</h1>
+      </div>
+    ),
+    isPrivate: true,
+  },
+  {
+    path: PATHS.COMMUNITY,
+    element: (
+      <div>
+        <h1>community</h1>
+      </div>
+    ),
     isPrivate: true,
   },
   {

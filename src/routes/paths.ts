@@ -3,6 +3,8 @@ const PATHS = {
   AUTH: "/auth",
   ROOT: "/",
   BLOG: "/blog",
+  ABOUT: "/about",
+  COMMUNITY: "/community",
 };
 
 const HASH_PATHS = {
