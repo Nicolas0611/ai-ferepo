@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 import Header from "../components/Header/Header";
 import LinkWrapper from "../components/Header/components/LinkWrapper";
 import ButtonsWrapper from "../components/Header/components/ButtonsWrapper";
