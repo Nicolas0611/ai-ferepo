@@ -3,6 +3,6 @@ export interface RoutesProps {
   element: JSX.Element;
   isPrivate?: boolean;
   errorElement?: JSX.Element;
-  loader?: () => Promise<Response>;
+  loader?: any;
   children?: Array<object>;
 }

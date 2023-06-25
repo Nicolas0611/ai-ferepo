@@ -11,7 +11,7 @@ const Buttons = ({ type, href, label, bgColor }: ButtonProps) => {
     <LinkButtonWrapper href={href}>
       <button
         type={type}
-        className={`text-primary-text bg-${bgColor} focus:ring-4 focus:ring-blue-300 font-regular rounded-lg  px-5 py-2.5`}
+        className={`text-primary-text focus:ring-4 focus:ring-blue-300 font-regular rounded-lg  px-5 py-2.5 bg-${bgColor}`}
       >
         {label}
       </button>

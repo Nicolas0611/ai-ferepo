@@ -1,8 +1,11 @@
 import { PATHS } from "./paths.js";
-import Home from "../pages/Home.tsx";
+import Home from "../pages/Home/Home.tsx";
 import { createBrowserRouter } from "react-router-dom";
 import { RoutesProps } from "../interfaces/RoutesInterface.ts";
 import NavigationLayout from "../Layout/NavigationLayout.tsx";
+import SignInPage from "../pages/Auth/LoginPage.tsx";
+import { SignedIn } from "@clerk/clerk-react";
+import SignUpPage from "../pages/Auth/SignUpPage.tsx";
 
 let routes: RoutesProps[] = [
   {
@@ -10,21 +13,24 @@ let routes: RoutesProps[] = [
     element: <Home />,
   },
   {
-    path: PATHS.AUTH,
-    element: (
-      <div>
-        <h1>auth page</h1>
-      </div>
-    ),
+    path: PATHS.LOGIN,
+    element: <SignInPage />,
+  },
+  {
+    path: PATHS.SIGNUP,
+    element: <SignUpPage />,
+  },
+  {
+    path: PATHS.SIGNUP,
+    element: <SignInPage />,
   },
   {
     path: PATHS.BLOG,
     element: (
-      <div>
+      <SignedIn>
         <h1>blog</h1>
-      </div>
+      </SignedIn>
     ),
-    isPrivate: true,
   },
   {
     path: PATHS.ABOUT,
@@ -33,7 +39,6 @@ let routes: RoutesProps[] = [
         <h1>about</h1>
       </div>
     ),
-    isPrivate: true,
   },
   {
     path: PATHS.COMMUNITY,
@@ -42,7 +47,6 @@ let routes: RoutesProps[] = [
         <h1>community</h1>
       </div>
     ),
-    isPrivate: true,
   },
   {
     path: PATHS.ROOT,
@@ -56,6 +60,7 @@ let routes: RoutesProps[] = [
 
 routes = routes.map((route) => ({
   ...route,
+  errorElement: <h1> ERROR PAGE</h1>,
 }));
 
 export const router = createBrowserRouter([

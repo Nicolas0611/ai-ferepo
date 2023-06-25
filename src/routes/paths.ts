@@ -1,6 +1,7 @@
 const PATHS = {
   HOME: "/home",
-  AUTH: "/auth",
+  LOGIN: "/login",
+  SIGNUP: "/signup",
   ROOT: "/",
   BLOG: "/blog",
   ABOUT: "/about",

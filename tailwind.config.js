@@ -11,6 +11,7 @@ export default {
     colors: {
       transparent: "transparent",
       white: "#ffffff",
+      black: "#000",
       "primary-cta": "#DCFD88",
       "primary-input": "#242424",
       "primary-text": "#0B0D14",
