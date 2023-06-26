@@ -2,7 +2,7 @@ import { PATHS } from "./paths.js";
 import Home from "../pages/Home/Home.tsx";
 import { createBrowserRouter } from "react-router-dom";
 import { RoutesProps } from "../interfaces/RoutesInterface.ts";
-import NavigationLayout from "../Layout/NavigationLayout.tsx";
+import NavigationLayout from "../layout/NavigationLayout.tsx";
 import SignInPage from "../pages/Auth/LoginPage.tsx";
 import { SignedIn } from "@clerk/clerk-react";
 import SignUpPage from "../pages/Auth/SignUpPage.tsx";

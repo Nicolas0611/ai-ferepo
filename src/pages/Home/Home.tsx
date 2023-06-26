@@ -2,7 +2,7 @@ import CtaSection from "../../components/CtaSection/CtaSection";
 
 const Home = () => {
   return (
-    <div>
+    <div className="container">
       <CtaSection />
     </div>
   );
