@@ -5,10 +5,10 @@ export const initialInputSearchData = {
 
 export const inputSearchData: InputProps[] = [
   {
+    iconType: "search",
     placeholder: "Search for any AI",
     name: "ai",
     type: "text",
     isRequired: false,
-    bgColor: "primary-input",
   },
 ];

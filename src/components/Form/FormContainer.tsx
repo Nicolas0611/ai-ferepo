@@ -1,9 +1,9 @@
 import { Formik, Form } from "formik";
 
 import Input from "./Input";
-import { FormProps, InputProps } from "../../interfaces/ComponentInterfaces";
+import { FormProps } from "../../interfaces/ComponentInterfaces";
 
-const FormComponent = ({
+const FormContainer = ({
   handleSubmit,
   initialValues,
   inputsData,
@@ -11,21 +11,16 @@ const FormComponent = ({
   formClass,
 }: FormProps) => {
   return (
-    <Formik
-      onSubmit={(values) => {
-        handleSubmit(values);
-      }}
-      initialValues={initialValues}
-    >
+    <Formik onSubmit={handleSubmit} initialValues={initialValues}>
       {({ values, handleChange }) => (
         <Form className={formClass}>
-          {inputsData.map((input: InputProps, index) => (
+          {inputsData.map((input, index) => (
             <Input
+              iconType={input.iconType}
               key={index}
               type={input.type}
               placeholder={input.placeholder}
               value={values[input.name || ""]}
-              bgColor={input.bgColor}
               name={input.name}
               handleChange={handleChange}
             />
@@ -37,4 +32,4 @@ const FormComponent = ({
   );
 };
 
-export default FormComponent;
+export default FormContainer;

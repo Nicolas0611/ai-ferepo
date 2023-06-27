@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { PATHS } from "../../../routes/paths";
 
 type LinkProps = {
@@ -16,9 +16,13 @@ const LinkWrapper = () => {
   return (
     <ul className="flex items-center gap-8 ">
       {Links.map((link) => (
-        <Link key={link.href} to={link.href}>
+        <NavLink
+          key={link.href}
+          to={link.href}
+          className={({ isActive }) => (isActive ? "font-bold ease-out" : "")}
+        >
           {link.label}
-        </Link>
+        </NavLink>
       ))}
     </ul>
   );

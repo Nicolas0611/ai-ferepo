@@ -1,6 +1,5 @@
 import { FaSearch } from "react-icons/fa";
-
-export const ICONS = {
+import { IconsProps } from "../interfaces/ComponentInterfaces";
+export const ICONS: IconsProps = {
   search: FaSearch,
-  // Add other icons as needed
 };
