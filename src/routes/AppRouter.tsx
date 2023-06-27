@@ -2,7 +2,7 @@ import { PATHS } from "./paths.js";
 import Home from "../pages/Home/Home.tsx";
 import { createBrowserRouter } from "react-router-dom";
 import { RoutesProps } from "../interfaces/RoutesInterface.ts";
-import NavigationLayout from "../Layout/NavigationLayout.tsx";
+import NavigationLayout from "../layout/NavigationLayout.tsx";
 import SignInPage from "../pages/Auth/LoginPage.tsx";
 import { SignedIn } from "@clerk/clerk-react";
 import SignUpPage from "../pages/Auth/SignUpPage.tsx";
@@ -11,18 +11,6 @@ let routes: RoutesProps[] = [
   {
     path: PATHS.HOME,
     element: <Home />,
-  },
-  {
-    path: PATHS.LOGIN,
-    element: <SignInPage />,
-  },
-  {
-    path: PATHS.SIGNUP,
-    element: <SignUpPage />,
-  },
-  {
-    path: PATHS.SIGNUP,
-    element: <SignInPage />,
   },
   {
     path: PATHS.BLOG,
@@ -60,10 +48,18 @@ let routes: RoutesProps[] = [
 
 routes = routes.map((route) => ({
   ...route,
-  errorElement: <h1> ERROR PAGE</h1>,
+  errorElement: <h1>ERROR PAGE</h1>,
 }));
 
 export const router = createBrowserRouter([
+  {
+    path: PATHS.LOGIN,
+    element: <SignInPage />,
+  },
+  {
+    path: PATHS.SIGNUP,
+    element: <SignUpPage />,
+  },
   {
     element: <NavigationLayout />,
     children: routes,
